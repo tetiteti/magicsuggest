@@ -1397,7 +1397,6 @@
 
                 $(ms).trigger('keyup', [ms, e]);
 
-                clearTimeout(_timer);
 
                 // collapse if escape, but keep focus.
                 if(e.keyCode === KEYCODES.ESC && cfg.expanded) {
@@ -1437,6 +1436,7 @@
                         break;
                     }
                     default:
+                        clearTimeout(_timer);
                         if(_selection.length === cfg.maxSelection){
                             self._updateHelper(cfg.maxSelectionRenderer.call(this, _selection.length));
                         }
